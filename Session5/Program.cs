@@ -51,6 +51,23 @@ class Program
 
         Console.WriteLine($"\nServing customer: {customers.Dequeue()}");
         
+        //Task 5: Array Grade Range
+        int[] Grades = new int[5];
+        int sum = 0;
+
+        for (int i = 0; i < Grades.Length; i++) {
+            Console.Write($"Enter grade {i + 1}: ");
+            Grades[i] = int.Parse(Console.ReadLine());
+            sum += Grades[i];
+        }
+
+        Array.Sort(grades);
+        double average = sum / 5.0;
+
+        Console.WriteLine($"\nLowest Grade: {Grades[0]}");
+        Console.WriteLine($"Highest Grade: {Grades[4]}");
+        Console.WriteLine($"Average: {average}");
+        
     
     }
 }
