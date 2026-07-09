@@ -102,6 +102,25 @@ class Program
         Console.WriteLine($"\n1st place: {scores[0]}");
         Console.WriteLine($"2nd place: {scores[1]}");
         Console.WriteLine($"3rd place: {scores[2]}");
+        
+        //Task 8: Undo Last Action
+        Stack<string> actions = new Stack<string>();
+        string Input;
+
+        Console.WriteLine("Enter actions (type 'stop' to finish):");
+        while ((input = Console.ReadLine()) != "stop") {
+            actions.Push(input);
+        }
+
+        Console.WriteLine("\nUndoing actions:");
+        for (int i = 0; i < 2 && actions.Count > 0; i++) {
+            Console.WriteLine($"Undone: {actions.Pop()}");
+        }
+
+        Console.WriteLine("\nRemaining actions:");
+        foreach (string action in actions) {
+            Console.WriteLine(action);
+        }
     
     }
 }
