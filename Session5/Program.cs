@@ -68,6 +68,27 @@ class Program
         Console.WriteLine($"Highest Grade: {Grades[4]}");
         Console.WriteLine($"Average: {average}");
         
+        //Task 6: Filtered Shopping List
+        List<string> shoppingList = new List<string>();
+        string input;
+
+        Console.WriteLine("Enter items (type 'done' to finish):");
+        while ((input = Console.ReadLine()) != "done") {
+            shoppingList.Add(input);
+        }
+
+        Console.WriteLine("\nCurrent List: " + string.Join(", ", shoppingList));
+        Console.Write("Enter an item to remove: ");
+        string toRemove = Console.ReadLine();
+
+        if (shoppingList.Remove(toRemove)) {
+            Console.WriteLine($"Removed '{toRemove}'.");
+        } else {
+            Console.WriteLine("Item not found.");
+        }
+
+        Console.WriteLine("Final List: " + string.Join(", ", shoppingList));
+        
     
     }
 }
