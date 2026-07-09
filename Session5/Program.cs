@@ -89,6 +89,19 @@ class Program
 
         Console.WriteLine("Final List: " + string.Join(", ", shoppingList));
         
+        //Task 7: High Score Podium
+        List<int> scores = new List<int>();
+        for (int i = 0; i < 5; i++) {
+            Console.Write($"Enter score {i + 1}: ");
+            scores.Add(int.Parse(Console.ReadLine()));
+        }
+
+        scores.Sort();
+        scores.Reverse();
+
+        Console.WriteLine($"\n1st place: {scores[0]}");
+        Console.WriteLine($"2nd place: {scores[1]}");
+        Console.WriteLine($"3rd place: {scores[2]}");
     
     }
 }
