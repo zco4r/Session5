@@ -142,6 +142,27 @@ class Program
         static double CalculateAverage(List<int> list) => list.Average();
 
         static int FindFirstFailing(List<int> list) => list.Find(x => x < 60);
+        
+        //Task 10: Print Queue Manager
+        static void MAin() {
+            Queue<string> printQueue = new Queue<string>();
+            string input;
+            while ((input = Console.ReadLine()) != "done") printQueue.Enqueue(input);
+
+            Console.Write("Job to cancel: ");
+            string jobToCancel = Console.ReadLine();
+    
+            printQueue = RemoveJob(printQueue, jobToCancel);
+        }
+
+        static Queue<string> RemoveJob(Queue<string> queue, string target) {
+            Queue<string> newQueue = new Queue<string>();
+            while (queue.Count > 0) {
+                string job = queue.Dequeue();
+                if (job != target) newQueue.Enqueue(job);
+            }
+            return newQueue;
+        }
     
     }
 }
