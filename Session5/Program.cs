@@ -3,7 +3,20 @@
 class Program
 {
     static void Main(string[] args)
-    {
-        Console.WriteLine("Hello, World!");
+    { 
+        //Task 1: Fixed Grades Array
+        int[] grades = new int[5];
+
+        for (int i = 0; i < grades.Length; i++) {
+            Console.Write($"Enter grade {i + 1}: ");
+            grades[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("Grades entered:");
+        foreach (int grade in grades) {
+            Console.WriteLine(grade);
+        }
+        
+    
     }
 }
