@@ -121,6 +121,27 @@ class Program
         foreach (string action in actions) {
             Console.WriteLine(action);
         }
+        
+        //Task 9: Grade Analyzer with Functions
+        static void Main() {
+            Console.Write("How many grades? ");
+            int count = int.Parse(Console.ReadLine());
+            List<int> grades = new List<int>();
+            for (int i = 0; i < count; i++) {
+                Console.Write($"Enter grade {i + 1}: ");
+                grades.Add(int.Parse(Console.ReadLine()));
+            }
+
+            Console.WriteLine($"Average: {CalculateAverage(grades)}");
+    
+            int failing = FindFirstFailing(grades);
+            if (failing != 0) Console.WriteLine($"First failing grade: {failing}");
+            else Console.WriteLine("No failing grades found.");
+        }
+
+        static double CalculateAverage(List<int> list) => list.Average();
+
+        static int FindFirstFailing(List<int> list) => list.Find(x => x < 60);
     
     }
 }
