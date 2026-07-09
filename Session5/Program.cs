@@ -41,6 +41,16 @@ class Program
 
         Console.WriteLine($"\nPressing back button... Landing on: {history.Pop()}");
         
+        //Task 4: Customer Service Queue
+        Queue<string> customers = new Queue<string>();
+
+        for (int i = 0; i < 3; i++) {
+            Console.Write($"Enter customer name {i + 1}: ");
+            customers.Enqueue(Console.ReadLine());
+        }
+
+        Console.WriteLine($"\nServing customer: {customers.Dequeue()}");
+        
     
     }
 }
