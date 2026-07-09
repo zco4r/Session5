@@ -31,6 +31,16 @@ class Program
             Console.WriteLine($"{count++}. {task}");
         }
         
+        //Task 3: Browsing History Stack
+        Stack<string> history = new Stack<string>();
+
+        for (int i = 0; i < 3; i++) {
+            Console.Write($"Enter URL {i + 1}: ");
+            history.Push(Console.ReadLine());
+        }
+
+        Console.WriteLine($"\nPressing back button... Landing on: {history.Pop()}");
+        
     
     }
 }
